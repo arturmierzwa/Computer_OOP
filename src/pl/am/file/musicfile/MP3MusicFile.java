@@ -16,4 +16,25 @@ public class MP3MusicFile extends AbstractMusicFile {
     public int getQuality() {
         return quality;
     }
+
+    /*@Override
+    public String getName() {
+        return "Plik nazywa się " + super.getName();
+    }*/
+
+    /*@Override
+    public String toString() {
+        return "Plik nazywa się: " + name;
+    }*/
+
+    @Override
+    public String toString() {
+        return "MP3MusicFile{" +
+                "quality=" + quality +
+                ", bandName='" + bandName + '\'' +
+                ", title='" + title + '\'' +
+                ", name='" + name + '\'' +
+                ", size=" + size +
+                '}';
+    }
 }

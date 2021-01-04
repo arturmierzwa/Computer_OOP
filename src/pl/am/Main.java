@@ -9,6 +9,9 @@ import pl.am.file.musicfile.MP3MusicFile;
 import pl.am.usbdevice.MemoryStick;
 import pl.am.usbdevice.Mouse;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -16,6 +19,11 @@ public class Main {
         JPGImageFile jpg1 = new JPGImageFile("nazwa1.jpg", 200, 80);
         MP3MusicFile mp3file = new MP3MusicFile("plik.mp3", 4000, "Marilyn Manson",
                 "Broken Middle", 100);
+
+        System.out.println(mp3file);
+
+        //System.out.println(jpg1 instanceof GIFImageFile);
+
 
         //SSDDrive drive = new SSDDrive();zamiast SSDDrive drive można Drive drive, bo SSDDrive to podtyp interfejsu Drive
         Drive drive = new HDDDrive();
@@ -26,6 +34,24 @@ public class Main {
         drive.listFiles();
         File file = drive.findFile("plik.mp3");
         System.out.println(file.getSize());
+
+        System.out.println(gif1.getVersion());
+
+        System.out.println(Monitor.MAX_HEIGHT);
+        System.out.println(Monitor.getMaxHeight());
+
+        List <File> files = new ArrayList<>();
+        files.add(jpg1);
+        files.add(gif1);
+        for (File file2 : files) {
+            if (file2 instanceof JPGImageFile){
+                System.out.println("To jest plik JPG");
+            } else if (file2 instanceof GIFImageFile){
+                System.out.println("To jest plik GIF");
+            }
+        }
+
+
 
         Monitor monitor = new Monitor();
         System.out.println(monitor.getResolution());

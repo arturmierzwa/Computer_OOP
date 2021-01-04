@@ -1,6 +1,12 @@
 package pl.am;
 
 public class Monitor {
+    public static int MAX_HEIGHT = 6000; //gdy chcemy odwołać się do jakiegoś pola bez konieczności tworzenia obiektu klasy,
+                                        //dajemy static
+    public static int getMaxHeight(){
+        return MAX_HEIGHT;
+    }
+
     private int width = 3840;
     private int height = 1920;
 
